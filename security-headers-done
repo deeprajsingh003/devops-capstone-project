@@ -1,0 +1,22 @@
+$ nosetests -v
+test_index (tests.test_routes.TestAccountService) ... ok
+test_create_account (tests.test_routes.TestAccountService) ... ok
+test_read_an_account (tests.test_routes.TestAccountService) ... ok
+test_update_account (tests.test_routes.TestAccountService) ... ok
+test_delete_account (tests.test_routes.TestAccountService) ... ok
+test_list_accounts (tests.test_routes.TestAccountService) ... ok
+test_method_not_allowed (tests.test_routes.TestAccountService) ... ok
+test_security_headers (tests.test_routes.TestAccountService) ... ok
+test_cors_policies (tests.test_routes.TestAccountService) ... ok
+
+Name                  Stmts   Miss  Cover
+-----------------------------------------
+service/__init__.py       8      0   100%
+service/models.py        85      0   100%
+service/routes.py        65      0   100%
+-----------------------------------------
+TOTAL                   158      0   100%
+----------------------------------------------------------------------
+Ran 25 tests in 2.150s
+
+OK
