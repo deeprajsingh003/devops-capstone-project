@@ -1,0 +1,40 @@
+name: CI Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Steps for checking out the code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # (Required Setup) Set up Python environment
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.9"
+
+    # (Required Setup) Install dependencies
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pylint nose coverage
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    # A step for linting the code after checkout
+    - name: Lint code
+      run: |
+        flake8 service
+        pylint service
+
+    # A step for executing unit tests using nosetests after the linting step
+    - name: Execute unit tests
+      run: |
+        nosetests
