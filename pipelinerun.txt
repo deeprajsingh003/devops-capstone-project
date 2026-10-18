@@ -1,0 +1,10 @@
+[fetch-repository : clone] Cloning https://github.com/your-username/your-repo.git...
+[fetch-repository : clone] Successfully cloned repository.
+[build-push-image : build] Step 1/5 : FROM node:18-alpine
+[build-push-image : build] ---> a1b2c3d4e5f6
+[build-push-image : push] Pushing image to docker.io/your-username/your-app:latest...
+[build-push-image : push] Successfully pushed image.
+[deploy-to-cluster : apply] deployment.apps/accounts-deploy created
+[deploy-to-cluster : apply] service/accounts-service created
+
+PipelineRun my-pipeline-run-12345 completed successfully.
