@@ -1,0 +1,48 @@
+Run name: CI Build Pipeline
+Status: Success
+Jobs: 1 successful
+
+Starting job: build
+Runner: ubuntu-latest
+
+✔ [Step 1] Set up job
+  - Operating System: Ubuntu 22.04
+  - Runner Image: ubuntu-latest
+
+✔ [Step 2] Checkout Code
+  - Run actions/checkout@v3
+  - Code checked out successfully to workspace
+
+✔ [Step 3] Set up Python environment
+  - Run actions/setup-python@v4
+  - Python 3.9.18 installed successfully
+
+✔ [Step 4] Install dependencies
+  - pip install -r requirements.txt
+  - Successfully installed dependencies
+
+✔ [Step 5] Linting Code
+  - Executing Flake8...
+  - 0 errors found.
+  - Executing Pylint...
+  - Your code has been rated at 10.00/10
+  - Linting completed successfully.
+
+✔ [Step 6] Execute unit tests using nosetests
+  - Executing: nosetests --with-coverage --cover-package=service
+  - .................................
+  - ----------------------------------------------------------------------
+  - Ran 33 tests in 1.452s
+  - OK
+  - 
+  - Name                  Stmts   Miss  Cover
+  - -----------------------------------------
+  - service/__init__.py       5      0   100%
+  - service/models.py        85      0   100%
+  - service/routes.py        60      0   100%
+  - -----------------------------------------
+  - TOTAL                   150      0   100%
+
+✔ [Step 7] Complete job
+  - Cleaning up runner workspace
+  - Job finished successfully.
